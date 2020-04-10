@@ -1,0 +1,3 @@
+# GiphyClientCleanByLayers
+# CleanArchitectureByLayers
+# CleanArchitectureByLayers
