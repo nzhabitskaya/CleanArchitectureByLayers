@@ -1,0 +1,20 @@
+apply plugin: 'java-library'
+apply from: "$rootDir/versions.gradle"
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Annotations
+    implementation "com.fernandocejas:arrow:$arrowVersion"
+    implementation "javax.inject:javax.inject:$javaxInjectVersion"
+
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+}

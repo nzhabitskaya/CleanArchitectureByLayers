@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+apply from: "$rootDir/versions.gradle"
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.chameapp.giphyclientcleanbylayers"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+    packagingOptions{
+        exclude 'META-INF/rxjava.properties'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(':domain')
+    implementation project(':data')
+
+    // Support Libraries
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+    implementation "com.android.support:design:$supportLibraryVersion"
+
+    // MVP implementation
+    implementation "com.hannesdorfmann.mosby:mvp:$mosbyFrameworkVersion"
+    implementation "com.hannesdorfmann.mosby:viewstate:$mosbyFrameworkVersion"
+
+    // Dagger 2
+    compile "com.google.dagger:dagger:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    // Using for support library
+    compile "com.google.dagger:dagger-android-support:$daggerVersion"
+
+    // Dagger-Android
+    compile "com.google.dagger:dagger-android:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    // UI
+    implementation "com.android.support:recyclerview-v7:$supportLibraryVersion"
+    implementation "com.yqritc:recyclerview-flexibledivider:$recyclerviewFlexibleDividerVersion"
+
+    implementation "com.jakewharton.rxbinding:rxbinding:$rxbindingVersion"
+    implementation "com.jakewharton:butterknife:$butterknifeVersion"
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+
+    // REST interactions
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$converterGsonVersion"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:$okhttpUrlConnectionVersion"
+    implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
+
+    //Http logging
+    implementation "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion"
+
+    // Test coverage
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}

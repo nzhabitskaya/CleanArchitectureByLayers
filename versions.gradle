@@ -1,0 +1,30 @@
+ext {
+    supportLibraryVersion = '26.1.0'
+    constraintLayoutVersion = '1.0.2'
+    mosbyFrameworkVersion = '2.0.1'
+    daggerVersion = '2.13'
+    javaxInjectVersion = '1'
+    arrowVersion = '1.0.0'
+
+    recyclerviewFlexibleDividerVersion = '1.1.0'
+    butterknifeVersion = '8.8.1'
+    glideVersion = '3.8.0'
+
+    retrofitVersion = '2.3.0'
+    rxjava2Version = '2.2.0'
+    converterGsonVersion = '2.3.0'
+
+    okhttpUrlConnectionVersion = '3.8.0'
+    okhttpVersion = '3.9.0'
+    loggingInterceptorVersion = '3.8.1'
+
+    gsonVersion = '2.8.0'
+    realmVersion = '0.80.0'
+
+    rxjavaVersion = '2.1.0'
+    rxandroidVersion = '2.0.1'
+    rxbindingVersion = '1.0.1'
+
+    junitVersion = '4.12'
+    espressoVersion = '3.0.1'
+}
